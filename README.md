@@ -2,13 +2,13 @@
 
 
 ## Basic Details
-### Team Name: [SatusHack]
+### Team Name: SatusHack
 
 
 ### Team Members
-- Member 1: [Devika Manoj] - [School of Engineering, CUSAT]
-- Member 2: [Athidhi V] - [School of Engineering, CUSAT]
-- Member 3: [Gagana Gopinath] - [School of Engineering, CUSAT]
+- Member 1: Devika Manoj - School of Engineering, CUSAT
+- Member 2: Athidhi V - School of Engineering, CUSAT
+- Member 3: Gagana Gopinath - School of Engineering, CUSAT
 
 ### Hosted Project Link
 [mention your project hosted project link here]
