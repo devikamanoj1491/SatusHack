@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERSONAL PORTFOLIO</title>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            background-color: #f4f4f4;
+            align-items: center;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 150px;
+            height: 100%;
+            background-color: #cd34db;
+            padding-top: 50px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 16px;
+            color: white;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #b929b9;
+        }
+
+        /* Header Section */
+        #header {
+            width: 100%;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            background-color: #f4f4f4;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Login and Social Icons in the Top Right */
+        .top-right-icons {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-right-icons a {
+            font-size: 20px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .top-right-icons a:hover {
+            color: #3498db;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            width: 40%;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 35px 12px 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+
+        /* List Below Search Bar */
+        .nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 70px;
+            width: 90%;
+            max-width: 1200px;
+            margin-top: 20px;
+        }
+
+        .nav-list a {
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: normal;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #db34d8;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s;
+        }
+
+        .nav-list a:hover {
+            color: #100f10;
+        }
+
+        .nav-list a:hover::after {
+            width: 100%;
+        }
+
+        /* Grid Section */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        /* Grid Item Styling */
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            border-radius: 10px;
+            height: 150px;
+            cursor: pointer;
+            overflow: visible;
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: white !important;
+            font-size: 18px;
+            font-weight: normal;
+            z-index: 1;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .grid-item.active::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+            transition: background-color 0.3s;
+        }
+
+        /* Dropdown Menu */
+        .grid-item .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgb(208, 195, 207);
+            border-radius: 5px;
+            z-index: 9999;
+            text-align: left;
+            padding: 10px;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .grid-item.active .dropdown {
+            display: block;
+        }
+
+        .grid-item .dropdown a {
+            display: block;
+            padding: 8px;
+            color: #0f1010;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .grid-item .dropdown a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .grid-item::after {
+            content: "+";
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 30px;
+            color: white;
+            z-index: 10000;
+            cursor: pointer;
+        }
+
+        /* Sample Background Images */
+        .grid-item.north-america {
+            background-image: url('https://media.istockphoto.com/id/471926619/photo/moraine-lake-at-sunrise-banff-national-park-canada.jpg?s=612x612&w=0&k=20&c=mujiCtVk5QA697SD3d8V8BGmd91-8HlxCNHkolEA0Bo=');
+        }
+
+        .grid-item.south-america {
+            background-image: url('https://media.istockphoto.com/id/518230906/photo/christ-the-redeemer-in-rio-de-janeiro.jpg?s=612x612&w=0&k=20&c=cCDx5OfxxdLTLLBJmDLCm75JRj1uqFNqbb7J3wZ-ms8=');
+        }
+
+        .grid-item.europe {
+            background-image: url('https://www.unimoni.in/blog/wp-content/uploads/2023/09/Eiffel-Tower-Europe.webp');
+        }
+
+        .grid-item.asia {
+            background-image: url('https://t3.ftcdn.net/jpg/02/65/23/70/360_F_265237090_Muthvb72m2POYFjyx7F5UCQLh9JdBtKN.jpg');
+        }
+
+        .grid-item.africa {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBy_H1WTqJPAm0U7yevtUM7kVhUzoz1c8F3Q&s');
+        }
+
+        .grid-item.australia {
+            background-image: url('https://images.unsplash.com/photo-1523482580672-f109ba8cb9be');
+        }
+
+        .grid-item.micronesia {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEfbd2lm_L98wVdFpJO3o1WTux9vuQqhi-xQ');
+        }
+
+        .grid-item.melanesia {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6IDoh9izs0-SiZPTokO1kcbhLBgUIBW2yMQ');
+        }
+
+        .grid-item.polynesia {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8FyXHpgCOgXv1piNxcRqkQ4Qu8dibNF_IvA');
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active-tab {
+            display: block;
+        }
+
+        /* About Section */
+        .about {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 18px;
+            line-height: 1.6;
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Left Sidebar -->
+    <div class="sidebar">
+        <a href="#">Dashboard</a>
+        <a href="#">Profile</a>
+        <a href="#">Notifications</a>
+        <a href="#">Messages</a>
+        <a href="#">Settings</a>
+        <a href="#">Help</a>
+        <a href="#">Support</a>
+        <a href="#">Language</a>
+    </div>
+
+    <!-- Main Header Section with Search Bar -->
+    <div id="header">
+        <!-- Login and Social Icons in the Top Right -->
+        <div class="top-right-icons">
+            <a href="#"><i class="fa fa-sign-in"></i></a> <!-- Login Icon -->
+            <a href="#"><i class="fa fa-facebook"></i></a> <!-- Facebook Icon -->
+            <a href="#"><i class="fa fa-instagram"></i></a> <!-- Instagram Icon -->
+            <a href="#"><i class="fa fa-twitter"></i></a> <!-- Twitter Icon -->
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <!-- Navigation List Below the Search Bar -->
+        <div class="nav-list">
+            <a href="#">Home</a>
+            <a href="#">Region</a>
+            <a href="#">Culture</a>
+            <a href="#">Attire</a>
+            <a href="#">Artforms</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- Grid Section -->
+    <div class="grid-container">
+        <div class="grid-item north-america" onclick="toggleDropdown(this)">
+            North America
+            <div class="dropdown">
+                <a href="#">Countries</a>
+                <a href="#">Cuisine</a>
+                <a href="#">Artforms</a>
+                <a href="#">Recent Developments</a>
+            </div>
+        </div>
+        <div class="grid-item south-america" onclick="toggleDropdown(this)">
+            South America
+            <div class="dropdown">
+                <a href="#">Countries</a>
+                <a href="#">Cuisine</a>
+                <a href="#">Artforms</a>
+                <a href="#">Recent Developments</a>
+            </div>
+        </div>
+        <div class="grid-item europe" onclick="toggleDropdown(this)">
+            Europe
+            <div class="dropdown">
+                <a href="#">Countries</a>
+                <a href="#">Cuisine</a>
+                <a href="#">Artforms</a>
+                <a href="#">Recent Developments</a>
+            </div>
+        </div>
+        <div class="grid-item asia" onclick="toggleDropdown(this)">
+            Asia
+            <div class="dropdown">
+                <a href="#">Countries</a>
+                <a href="#">Cuisine</a>
+                <a href="#">Artforms</a>
+                <a href="#">Recent Developments</a>
+            </div>
+        </div>
+        <div class="grid-item africa" onclick="toggleDropdown(this)">
+            Africa
+            <div class="dropdown">
+                <a href="#">Countries</a>
+                <a href="#">Cuisine</a>
+                <a href="#">Artforms</a>
+                <a href="#">Recent Developments</a>
+            </div>
+        </div>
+        <div class="grid-item australia" onclick="toggleDropdown(this)">
+            Australia
+            <div class="dropdown">
+                <a href="#">Countries</a>
+                <a href="#">Cuisine</a>
+                <a href="#">Artforms</a>
+                <a href="#">Recent Developments</a>
+            </div>
+        </div>
+        <div class="grid-item micronesia" onclick="toggleDropdown(this)">
+            Micronesia
+            <div class="dropdown">
+                <a href="#">Countries</a>
+                <a href="#">Cuisine</a>
+                <a href="#">Artforms</a>
+                <a href="#">Recent Developments</a>
+            </div>
+        </div>
+        <div class="grid-item melanesia" onclick="toggleDropdown(this)">
+            Melanesia
+            <div class="dropdown">
+                <a href="#">Countries</a>
+                <a href="#">Cuisine</a>
+                <a href="#">Artforms</a>
+                <a href="#">Recent Developments</a>
+            </div>
+        </div>
+        <div class="grid-item polynesia" onclick="toggleDropdown(this)">
+            Polynesia
+            <div class="dropdown">
+                <a href="#">Countries</a>
+                <a href="#">Cuisine</a>
+                <a href="#">Artforms</a>
+                <a href="#">Recent Developments</a>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
