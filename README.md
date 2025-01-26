@@ -30,11 +30,6 @@ For Software:
 # Installation
 (https://devikamanoj1491.github.io/SatusHack/)
 
-# Run
-[commands]
-
-### Project Documentation
-For Software:
 
 # Screenshots (Add at least 3)
 ![Screenshot 2025-01-26 110600](https://github.com/user-attachments/assets/fd479dc1-fb5a-48a5-8743-fe155a0b13f3)
@@ -53,9 +48,9 @@ Cuisine page
 
 
 ## Team Contributions
-- Athidhi V]: Main page, Festival page
-- Devika Manoj]: Region page, Artforms page
-- Gagana Gopinath]: Cuisine page, History page
+- Athidhi V: Main page, Festival page
+- Devika Manoj: Region page, Artforms page
+- Gagana Gopinath: Cuisine page, History page
 
 ---
 Made with ❤️ at TinkerHub
