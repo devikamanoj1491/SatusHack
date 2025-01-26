@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+.search{
+  height: 20px;
+  border: none;
+
+}
+.search-bar {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search-bar input {
+  width: 90%;
+  padding: 12px 35px 12px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+  
+}
+
+
+body {
+  margin: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  justify-content: center;
+}
+
+/* Container Styling */
+.contain {
+  padding: 10px 10%;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  align-self: center;
+}
+
+.logo {
+  width: 50px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: rgb(50, 163, 165);
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  background: rgb(50, 163, 165);
+  transition: width 0.5s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Header Section */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+}
+
+/* Carousel Container */
+.carousel-container {
+  width: 100%;
+  overflow: hidden; /* Hide items outside the container */
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  align-self: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.carousel-wrapper 
+{
+   height:fit-content; 
+}
+/* Carousel Wrapper */
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
+}
+
+/* Carousel Items */
+.carousel-item {
+  position: relative;
+  text-align: center;
+  flex: 0 0 calc(100% / 3.5); /* Ensure items take equal space */
+  /* height: 100%; */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 250px ;
+  padding: 10px;
+  border-radius: 20px;
+  object-fit: cover;
+  
+}
+
+/* Overlay Styling (Text box) */
+.carousel-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  opacity: 0; /* Hide text by default */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease; /* Smooth transition */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.carousel-item:hover .overlay {
+  opacity: 1; /* Show text on hover */
+}
+
+/* Text Styling */
+.carousel-item .place {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.carousel-item .place {
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: lighter;
+}
+.carousel-item .tags {
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.carousel-item .description {
+  font-size: 1rem;
+  text-align: center;
+  max-width: 80%;
+}
+
+/* Navigation Buttons */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button.prev {
+  left: 10px;
+}
+
+.nav-button.next {
+  right: 10px;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #000;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 100%; /* Show 1 item at a time */
+  }
+
+  .carousel-container {
+    width: 90%; /* Adjust container width for smaller screens */
+  }
+}

@@ -1,0 +1,25 @@
+<!-- templates/tag_images.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images for Tag: {{ tag }}</title>
+</head>
+<body>
+    <h1>Images for Tag: {{ tag }}</h1>
+    
+    <div>
+        {% for image in images %}
+            <div>
+                <img src="{{ url_for('static', filename='uploads/' + image.image_url.split('/')[-1]) }}" alt="Image" width="300">
+                <p>Tags: {{ image.tags }}</p>
+            </div>
+        {% else %}
+            <p>No images found for this tag.</p>
+        {% endfor %}
+    </div>
+
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>
