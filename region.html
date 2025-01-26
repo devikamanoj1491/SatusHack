@@ -22,7 +22,7 @@
             top: 0;
             width: 150px;
             height: 100%;
-            background-color: #cd34db;
+            background-color: #5b565b;
             padding-top: 50px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
             color: white;
@@ -38,7 +38,7 @@
         }
 
         .sidebar a:hover {
-            background-color: #b929b9;
+            background-color: #7d7c7c;
         }
 
         /* Header Section */
@@ -72,7 +72,6 @@
             color: #3498db;
         }
 
-        /* Search Bar */
         .search-bar {
             width: 40%;
             position: relative;
@@ -87,13 +86,29 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             outline: none;
         }
+        .search-bar .search-btn {
+    position: absolute;
+    top: 50%;
+    right: 20px; /* Position it at the right end of the input */
+    transform: translateY(-50%); /* Center it vertically */
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #ccc;
+    cursor: pointer;
+}
+.search-bar .search-btn:hover {
+    color: #727475; /* Change color on hover */
+}
+
 
         /* List Below Search Bar */
         .nav-list {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 70px;
+            gap: 150px;
+            font: lighter;
             width: 90%;
             max-width: 1200px;
             margin-top: 20px;
@@ -102,6 +117,7 @@
         .nav-list a {
             color: black;
             text-decoration: none;
+            font: lighter;
             font-size: 16px;
             font-weight: normal;
             position: relative;
@@ -131,7 +147,7 @@
         .grid-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* 3 items per row */
-            grid-gap: 30px; /* Increased gap between items */
+            grid-gap: 80px; /* Increased gap between items */
             width: 90%;
             max-width: 1200px;
             margin: 20px auto;
@@ -155,7 +171,7 @@
             color: white !important;
             font-size: 20px; /* Increased font size */
             font-weight: normal;
-            z-index: 1;
+            z-index: 0;
         }
 
         .grid-item:hover {
@@ -184,7 +200,7 @@
             right: 0;
             background: rgb(208, 195, 207);
             border-radius: 5px;
-            z-index: 9999;
+            z-index: 10;
             text-align: left;
             padding: 10px;
             animation: slideDown 0.3s ease-out;
@@ -203,7 +219,7 @@
         }
 
         .grid-item .dropdown a:hover {
-            background-color: #3498db;
+            background-color: #606466;
             color: white;
         }
 
@@ -214,45 +230,54 @@
             right: 10px;
             font-size: 30px;
             color: white;
-            z-index: 10000;
+            z-index: 1;
             cursor: pointer;
         }
 
         /* Sample Background Images */
         .grid-item.north-america {
             background-image: url('https://media.istockphoto.com/id/471926619/photo/moraine-lake-at-sunrise-banff-national-park-canada.jpg?s=612x612&w=0&k=20&c=mujiCtVk5QA697SD3d8V8BGmd91-8HlxCNHkolEA0Bo=');
+            z-index: 0;
         }
 
         .grid-item.south-america {
             background-image: url('https://media.istockphoto.com/id/518230906/photo/christ-the-redeemer-in-rio-de-janeiro.jpg?s=612x612&w=0&k=20&c=cCDx5OfxxdLTLLBJmDLCm75JRj1uqFNqbb7J3wZ-ms8=');
+            z-index: 0;
         }
 
         .grid-item.europe {
             background-image: url('https://www.unimoni.in/blog/wp-content/uploads/2023/09/Eiffel-Tower-Europe.webp');
+            z-index: 0;
         }
 
         .grid-item.asia {
             background-image: url('https://t3.ftcdn.net/jpg/02/65/23/70/360_F_265237090_Muthvb72m2POYFjyx7F5UCQLh9JdBtKN.jpg');
+            z-index: 0;
         }
 
         .grid-item.africa {
             background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBy_H1WTqJPAm0U7yevtUM7kVhUzoz1c8F3Q&s');
+            z-index: 0;
         }
 
         .grid-item.australia {
             background-image: url('https://images.unsplash.com/photo-1523482580672-f109ba8cb9be');
+            z-index: 0;
         }
 
         .grid-item.micronesia {
             background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEfbd2lm_L98wVdFpJO3o1WTux9vuQqhi-xQ');
+            z-index: 0;
         }
 
         .grid-item.melanesia {
             background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6IDoh9izs0-SiZPTokO1kcbhLBgUIBW2yMQ');
+            z-index: 0;
         }
 
         .grid-item.polynesia {
             background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8FyXHpgCOgXv1piNxcRqkQ4Qu8dibNF_IvA');
+            z-index: 0;
         }
 
         @keyframes slideDown {
@@ -325,6 +350,9 @@
         <!-- Search Bar -->
         <div class="search-bar">
             <input type="text" placeholder="Search...">
+            <button class="search-btn">
+                <i class="fa fa-search"></i> <!-- Search Icon -->
+            </button>
         </div>
 
         <!-- Navigation List Below the Search Bar -->
@@ -332,8 +360,8 @@
             <a href="#">Home</a>
             <a href="#">Region</a>
             <a href="#">Culture</a>
-            <a href="#">Attire</a>
-            <a href="#">Artforms</a>
+        
+            <a href="artforms.html">Artforms</a>
             <a href="#">Contact</a>
         </div>
     </div>
@@ -422,6 +450,20 @@
             </div>
         </div>
     </div>
+    <script>
+        function toggleDropdown(element) {
+            // Remove "active" class from all grid items
+            const allItems = document.querySelectorAll('.grid-item');
+            allItems.forEach(item => {
+                if (item !== element) {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Toggle "active" class on the clicked element
+            element.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>
