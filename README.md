@@ -1,7 +1,5 @@
-# [Project Name] 🎯
+Mosaic 🎯
 
-
-## Basic Details
 ### Team Name: SatusHack
 
 
@@ -10,35 +8,27 @@
 - Member 2: Athidhi V - School of Engineering, CUSAT
 - Member 3: Gagana Gopinath - School of Engineering, CUSAT
 
-### Hosted Project Link
-[mention your project hosted project link here]
-
 ### Project Description
-[2-3 lines about what your project does]
+Web application showcasing the world's heritages, cultures, and history
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+Cultural illiteracy
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+We aim to bring together different people societies and cultures and provide a learning platform for different cultures around the world
 
-## Technical Details
-### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- HTML,CSS
+- Python
+- ChatGPT
+- Flask
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+
 
 ### Implementation
 For Software:
 # Installation
-[commands]
+(https://devikamanoj1491.github.io/SatusHack/)
 
 # Run
 [commands]
@@ -47,53 +37,25 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot 2025-01-26 110600](https://github.com/user-attachments/assets/fd479dc1-fb5a-48a5-8743-fe155a0b13f3)
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+Main page of Mosaic
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+[Screenshot 2025-01-26 110728](https://github.com/user-attachments/assets/fce5ec81-fa86-4028-b6e1-bffc8a27cd99)
 
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+Region page
 
-For Hardware:
+![Screenshot 2025-01-26 110808](https://github.com/user-attachments/assets/8c49876d-a4d9-4f9e-a5de-a116c79976d0)
 
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Team](Add photo of your team here)
+Cuisine page
 
 
-![Components](Add photo of your components here)
-*List out all components shown*
 
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
-
-### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Athidhi V]: Main page, Festival page
+- Devika Manoj]: Region page, Artforms page
+- Gagana Gopinath]: Cuisine page, History page
 
 ---
 Made with ❤️ at TinkerHub
