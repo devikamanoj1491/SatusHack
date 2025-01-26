@@ -1,0 +1,32 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the Image Gallery</h1>
+    <a href="{{ url_for('upload_image') }}">Upload Image</a><br><br>
+    
+    <h2>Tags:</h2>
+    <ul>
+        {% for tag in tags %}
+            <li><a href="{{ url_for('tag_images', tag=tag) }}">{{ tag }}</a></li>
+        {% endfor %}
+    </ul>
+    {% for image in images %}
+    <div class="image-item">
+        <img src="{{ image.image_url }}" alt="Image" style="max-width: 200px;">
+        
+        <div class="tags">
+            {% for tag in image.tags.split(',') %}
+                <a href="{{ url_for('tag_images', tag=tag.strip()) }}" class="tag-link">{{ tag.strip() }}</a>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}
+
+</body>
+</html>

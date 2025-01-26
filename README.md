@@ -1,5 +1,7 @@
-Mosaic 🎯
+# [Project Name] 🎯
 
+
+## Basic Details
 ### Team Name: SatusHack
 
 
@@ -23,8 +25,8 @@ Mosaic 🎯
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- HTML,CSS
-- Python
+- [Languages used]
+- [Frameworks used]
 - [Libraries used]
 - [Tools used]
 
